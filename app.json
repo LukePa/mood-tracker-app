@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "mood-tracker-app",
+    "slug": "mood-tracker-app",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "mood-tracker-app"
+}
