@@ -1,16 +1,16 @@
 import React, {useState} from 'react';
 import { View, Button, StatusBar, TextInput, Text } from 'react-native';
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import getFirebaseAuth from '../../firebase/getFirebaseAuth';
 
 const auth = getFirebaseAuth();
 
-const LoginPage = ({navigation}) => {
+const CreateAccountPage = ({navigation}) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const login = (email, password) => {
-        signInWithEmailAndPassword(auth, email, password)
+    const createAccount = (email, password) => {
+        createUserWithEmailAndPassword(auth, email, password)
           .catch((error) => {
             console.log(error);
           });
@@ -30,15 +30,15 @@ const LoginPage = ({navigation}) => {
                 onChangeText={setPassword}
             />
             <Button 
-                title='Sign In' 
-                onPress={() => {login(email, password)}}
+                title='Create Account' 
+                onPress={() => {createAccount(email, password)}}
             />
             <Button
-                title='No Account? Click here to create one'
-                onPress={() => navigation.navigate('CreateAccount')}
+                title='Already have an account? Click here to log in'
+                onPress={() => navigation.navigate('Login')}
             />
         </View>
     );
 }
 
-export default LoginPage;
+export default CreateAccountPage;

@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, Button } from 'react-native';
 
 
-const HomePage = ({ navigation }) => {
+const HomePage = ({ navigation, signOut }) => {
     return (
         <View>
             <Text>Mood Tracker</Text>
@@ -23,6 +23,10 @@ const HomePage = ({ navigation }) => {
                 onPress={() => {
                     navigation.navigate('ViewMetrics')
                 }}
+            />
+            <Button 
+                title='Sign Out'
+                onPress={signOut}
             />
         </View>
     );
