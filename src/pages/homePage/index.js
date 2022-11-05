@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, Button } from 'react-native';
 import {setInitialUser} from '../../db';
 import {updateUser} from '../../db';
+import {getOrderedLogs} from '../../db';
 
 
 const HomePage = ({ navigation, signOut }) => {
@@ -33,7 +34,8 @@ const HomePage = ({ navigation, signOut }) => {
             <Button
                 title='WE LOVE TESTING SHIT'
                 //onPress={async () => {console.log(await setInitialUser('billyboby', ['gym', 'diet']))}}
-                onPress={async () => {console.log(await updateUser({nickname: 'hehehe little goblin'}))}}
+                //onPress={async () => {console.log(await updateUser({nickname: 'hehehe little goblin'}))}}
+                onPress={async () => {await getOrderedLogs(5)}}
             />
         </View>
     );
