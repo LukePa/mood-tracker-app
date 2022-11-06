@@ -19,7 +19,7 @@ const CreateLogPage = ({navigation}) => {
             setError(null);
             const userOverview = await getUserOverview();
             const metricValues = {}
-            userOverview.trackedMetrics.forEach(metric => {
+            userOverview.trackedMetrics.forEach(metric => { 
                 metricValues[metric.toUpperCase()] = 50;
             });
             setCustomMetrics(metricValues);
