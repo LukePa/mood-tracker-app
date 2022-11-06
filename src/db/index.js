@@ -3,6 +3,7 @@ import getUserOverview from './getUserOverview';
 import setInitialUser from './setInitialUser';
 import updateUser from './updateUser';
 import getOrderedLogs from './getOrderedLogs';
+import createLog from './createLog';
 
 
 module.exports = {
@@ -10,5 +11,6 @@ module.exports = {
     getUserOverview,
     setInitialUser,
     updateUser,
-    getOrderedLogs
+    getOrderedLogs,
+    createLog
 }
